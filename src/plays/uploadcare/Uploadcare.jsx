@@ -23,7 +23,7 @@ function Uploadcare(props) {
     setUpdateList(false);
   }
 
-  const uplodFileSelect = file => {
+  const uploadFileSelect = file => {
     console.log(`file changed ${file}`);
 
     if (file) {
@@ -46,7 +46,7 @@ function Uploadcare(props) {
                 id="file"
                 Clearable={true}
                 onChange = {(info) => uploadFileChange(info)}
-                onFileSelect = {(file) => uplodFileSelect(file)} />
+                onFileSelect = {(file) => uploadFileSelect(file)} />
             </div>
           </div>
           <ListFiles updateList={ updateList }/>

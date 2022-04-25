@@ -1,10 +1,13 @@
 
-import { useState, useEffect } from 'react';
-import useFetch from 'common/hooks/useFetch';
+import React, { useState, useEffect } from 'react';
 
+import useFetch from 'common/hooks/useFetch';
+import { Modal } from "common";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
+import ProcessImage from './ProcessImage';
 
 const ListFiles = ({updateList}) => {
+
   const URI = 'https://api.uploadcare.com/files/';
   
   const headers = {
@@ -13,8 +16,11 @@ const ListFiles = ({updateList}) => {
   
   const {data, loading, error} = useFetch(URI, { headers });
   const [files, setFiles] = useState([]);
+  const [showImgProcessModal, setShowImageProcessModal] = useState(false);
+  const [fileToProcess, setFileToProcess] = useState(null);
 
   useEffect(() => {
+    console.log('test');
     if (data.results) {
       setFiles(data.results);
       console.log(data.results);
@@ -22,6 +28,7 @@ const ListFiles = ({updateList}) => {
   }, [updateList]);
 
   useEffect(() => {
+    console.log('test2');
     if (data.results) {
       setFiles(data.results);
       console.log(data.results);
@@ -44,8 +51,23 @@ const ListFiles = ({updateList}) => {
       .catch(err => console.log(err));
   };
 
+  const editFile = (file) => {
+    console.log(file);
+    setFileToProcess(file);
+    setShowImageProcessModal(true);
+  }
+
   return (
     <div>
+      <Modal
+        title="Process Image"
+        onClose={() => setShowImageProcessModal(false)}
+        show={showImgProcessModal}
+        cname="uc-ip"
+        children={
+          <ProcessImage file={fileToProcess} />
+        }
+      />
       <h1>Gallery</h1>
       <ul className="uc-list-images">
         {loading && <li>Loading...</li>}
@@ -55,7 +77,7 @@ const ListFiles = ({updateList}) => {
             <div className="header">
               <span className="name">{file.original_filename}</span>
               <div className="actions">
-                <span className="icon"><FiEdit /></span>
+                <span className="icon" onClick = {(image) => editFile(file)}><FiEdit /></span>
                 <span className="icon" onClick={(id) => deleteFile(file.uuid) }><FiTrash2 /></span>
               </div>
             </div>
