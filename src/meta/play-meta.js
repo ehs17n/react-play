@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+Uploadcare,
 //import play here
 } from "plays";
 
@@ -110,6 +111,18 @@ export const plays = [
     level: 'Beginner',
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-uploadcare', 
+    name: 'Uploadcare', 
+    description: 'This play demonstrates several features of uploadcare app.',
+    component: () => {return <Uploadcare />},
+    path: '/plays/uploadcare',
+    level: 'Advanced',
+    tags: 'imageprocessing,APIcalls,Hooks',
+    github: 'atapas',
     cover: '',
     blog: '',
     video: ''

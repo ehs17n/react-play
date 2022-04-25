@@ -1,0 +1,18 @@
+{
+  "name": "uploadcare",
+  "version": "1.0.0",
+  "description": "This play demonstrates sever",
+  "main": "al features of uploadcare app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "uploadcare"
+  ],
+  "author": "Tapas Adhikary",
+  "license": "MIT",
+  "dependencies": {
+    "@uploadcare/react-widget": "^2.0.0"
+  }
+}

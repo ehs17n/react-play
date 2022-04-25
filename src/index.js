@@ -15,11 +15,11 @@ const Index = () => {
 
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
   return (
-    <React.StrictMode>
+    
       <SearchContext.Provider value={value}>
         <RouteDefs />
       </SearchContext.Provider>
-    </React.StrictMode>
+    
   );
 };
 const container = document.getElementById("root");
