@@ -21,6 +21,10 @@
   background-color: #e5e5e5;
 }
 
+.uc-list-images > li.item .header .name {
+  word-break: break-all;
+}
+
 .uc-list-images > li.item .header .actions {
   display: flex;
   align-items: center;
@@ -28,6 +32,7 @@
 
 .uc-list-images > li.item .header .actions .icon {
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .uc-list-images > li.item .file {

@@ -1,3 +1,6 @@
+
+import { useState } from 'react';
+
 import { getPlayById } from "meta/play-meta-util";
 
 import PlayHeader from "common/playlists/PlayHeader";
@@ -13,9 +16,11 @@ function Uploadcare(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
+  const [updateList, setUpdateList] = useState(false);
 
   const uploadFileChange = info => {
     console.log(info);
+    setUpdateList(false);
   }
 
   const uplodFileSelect = file => {
@@ -23,7 +28,7 @@ function Uploadcare(props) {
 
     if (file) {
       file.progress(info => console.log('File progress: ', info.progress))
-      file.done(info => console.log('File uploaded: ', info))
+      file.done(info => setUpdateList(true))
     }
   }
 
@@ -44,7 +49,7 @@ function Uploadcare(props) {
                 onFileSelect = {(file) => uplodFileSelect(file)} />
             </div>
           </div>
-          <ListFiles />
+          <ListFiles updateList={ updateList }/>
 
           {/* Your Code Ends Here */}
         </div>
