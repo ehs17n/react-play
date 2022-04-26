@@ -29,9 +29,12 @@ const ProcessImage = ({file}) => {
         </div>
         <div className="uc-ip-actions">
           Filter
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/600x600/-/filter/vevera/`)}>Vevera</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/600x600/-/filter/namala/`)}>Namala</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/600x600/`)}>Set Original</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/lavra/`)}>Lavra</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/pamaya/`)}>Pamaya</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/sewen/`)}>Sewen</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/vevera/`)}>Vevera</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/namala/`)}>Namala</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
         </div>
         <div className="uc-ip-actions">
           Rotate & Flip
