@@ -24,6 +24,9 @@ const ProcessImage = ({file}) => {
         </div>
         <div className="uc-ip-actions">
           Corp
+          <button onClick={() => setImageSrc(`${CDN_URI}-/crop/2000x1325/center/`)}>Corp Center</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/crop/4:3/`)}>Corp Ratio</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/crop/face/1:1/`)}>Corp Face</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/scale_crop/400x800/smart/`)}>Smart Corp</button>
           <button onClick={() => setImageSrc(`${CDN_URI}`)}>Set Original</button>
         </div>
