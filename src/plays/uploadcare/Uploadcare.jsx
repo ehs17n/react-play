@@ -20,12 +20,11 @@ function Uploadcare(props) {
 
   const uploadFileChange = info => {
     console.log(info);
-    setUpdateList(false);
   }
 
   const uploadFileSelect = file => {
     console.log(`file changed ${file}`);
-
+    setUpdateList(false);
     if (file) {
       file.progress(info => console.log('File progress: ', info.progress))
       file.done(info => setUpdateList(true))

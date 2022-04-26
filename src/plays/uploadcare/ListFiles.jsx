@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import useFetch from 'common/hooks/useFetch';
 import { Modal } from "common";
@@ -19,20 +19,19 @@ const ListFiles = ({updateList}) => {
   const [showImgProcessModal, setShowImageProcessModal] = useState(false);
   const [fileToProcess, setFileToProcess] = useState(null);
 
-  useEffect(() => {
-    console.log('test');
+  const setFilesToState = useCallback(() => {
     if (data.results) {
       setFiles(data.results);
       console.log(data.results);
     }
+  }, [data]);
+
+  useEffect(() => {
+    setFilesToState();
   }, [updateList]);
 
   useEffect(() => {
-    console.log('test2');
-    if (data.results) {
-      setFiles(data.results);
-      console.log(data.results);
-    }
+    setFilesToState();
   }, [loading]);
 
   const deleteFile = (fileId) => {
