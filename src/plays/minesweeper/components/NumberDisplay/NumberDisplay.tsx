@@ -1,16 +1,15 @@
 import React from 'react';
-import './NumberDisplay.css'
+import './NumberDisplay.css';
 interface NumberDisplayProps {
   value: number;
 }
 
-const NumberDisplay: React.FC<NumberDisplayProps> = (props) => {
+const NumberDisplay: React.FC<NumberDisplayProps> = ({ value }) => {
   return (
-    <div>
-      <div className=''>
-          <h2 className='hi'> hi </h2>
-          {props.value}
-      </div>
+    <div className='NumberDisplay'>
+      {value < 0
+        ? `-${Math.abs(value).toString().padStart(2, '0')}`
+        : value.toString().padStart(3, '0')}
     </div>
   );
 };
