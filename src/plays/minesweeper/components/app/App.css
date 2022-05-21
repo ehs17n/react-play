@@ -1,0 +1,56 @@
+.App {
+  padding: 16px;
+}
+
+.Header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 12px;
+  border-width: 4px;
+  border-style: solid;
+  border-right-color: #999;
+  border-bottom-color: #999;
+  border-left-color: white;
+  border-top-color: white;
+}
+
+.Face {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 35px;
+  height: 52px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 52px;
+}
+
+.Body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: (1fr)[9];
+      grid-template-rows: repeat(9, 1fr);
+  margin-top: 16px;
+  border-width: 4px;
+  border-style: solid;
+  border-right-color: #999;
+  border-bottom-color: #999;
+  border-left-color: white;
+  border-top-color: white;
+}
+/*# sourceMappingURL=App.css.map */

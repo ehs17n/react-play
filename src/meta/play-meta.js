@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+Minesweeper,
 //import play here
 } from "plays";
 
@@ -240,5 +241,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-minesweeper', 
+    name: 'Minesweeper', 
+    description: 'Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden &quot;mines&quot; or bombs without detonating any of them ',
+    component: () => {return <Minesweeper />},
+    path: '/plays/minesweeper',
+    level: 'Intermediate',
+    tags: 'tsx,Hooks',
+    github: 'ehs17n',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'ts'
   }, //replace new play item here
 ];
